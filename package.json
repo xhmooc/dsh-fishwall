@@ -1,6 +1,6 @@
 {
   "name": "dsh-fishwall",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "删除防护（dsh-fishwall）：检测到大规模删除就拉闸。用 Windows 文件审计（4663）数删除速率，超阈值 taskkill 掉正在删的进程，并把事故写进 fishwall-incidents。带设置界面。",
   "license": "MIT",
   "type": "module",
