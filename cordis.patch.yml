@@ -1,0 +1,8 @@
+# dsh-fishwall —— 绑定成一个 bundle。
+# id 与包名一致（client 半边将来若有，也沿用同一个 id）。
+- insert:
+    - id: dsh-fishwall
+      name: dsh-fishwall
+      config:
+        # 默认配置在这里；用户改 ~/.dsh/fishwall.json 会覆盖同名键。
+        enabled: true

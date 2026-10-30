@@ -1,0 +1,51 @@
+{
+  "name": "dsh-fishwall",
+  "version": "0.1.0",
+  "description": "删除防护（dsh-fishwall）：检测到大规模删除就拉闸。用 Windows 文件审计（4663）数删除速率，超阈值 taskkill 掉正在删的进程，并把事故写进 fishwall-incidents。带设置界面。",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "security",
+    "delete-guard",
+    "audit",
+    "windows"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhmooc/dsh-fishwall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xhmooc/dsh-fishwall/issues"
+  },
+  "homepage": "https://github.com/xhmooc/dsh-fishwall",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "slots"
+      ]
+    }
+  }
+}
