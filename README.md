@@ -180,6 +180,12 @@ Remove-Item "$env:USERPROFILE\.dsh\fishwall.pause" -Force               # 恢复
 
 **永远不会碰的进程**：`System`、`csrss`、`wininit`、`services`、`lsass`、`smss`、`winlogon`、`svchost`、`dwm`、`explorer`。
 
+还有一类 **Windows 自己的维护进程**也一律不碰——它们「正常工作时」就是几十秒删几百上千个文件：
+
+`TiWorker.exe`、`TrustedInstaller.exe`、`msiexec.exe`、`dism.exe`、`cleanmgr.exe`、`MsMpEng.exe`、`MpCmdRun.exe`、`SearchIndexer.exe`、`defrag.exe`、`winsat.exe`
+
+这条不是想出来的，是撞出来的：Windows 更新清理触发过一次「30 秒 400 个删除」，把 `TiWorker.exe` 杀了——那会打断一次 Windows Update。现在它们进了硬编码白名单。
+
 ---
 
 ## 文件都在哪
